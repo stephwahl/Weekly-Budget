@@ -16,15 +16,21 @@
       <main>
 
         <h1>My Weekly Budget</h1>
-        <div>
+
+    <section>
+        <div >
             <p>Remaining Balance $</p>
         </div>
-        <div class="main" id="add_expense_section">
+    </section>
+
+    <section>
+        <div class="main" id="add_expense_section"> 
             <h2>Add Expense:</h2>
             <form>
-                <label for="name_input">Select a category: </label>
+                <label for="name_input" id="category_label">Select a category: </label>
 
             <select name="category" id="name_input">
+                <option>Select a category</option>
                 <option value="entertainment">Entertainment</option>
                 <option value="food">Food</option>
                 <option value="clothing">Clothing</option>
@@ -40,7 +46,9 @@
             </div>
 
             </form>
-
+        </div>
+    </section>
+    <section>
             <table>
                 <tr>
                     <th>Categories</th>
@@ -68,17 +76,18 @@
                     <td>$</td>
                 </tr>
             </table>
-
-        </div>
-            
+        </section>
+        
+     <section>  
         <div id="piechart">
             <h2>Spend Analysis</h2>
         </div>
-
+    </section>
+    <section>
         <div>
             <h2>Total Spent: $</h2>
         </div>
-        
+    </section>
         
     </main>
 
