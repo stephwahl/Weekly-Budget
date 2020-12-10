@@ -1,0 +1,12 @@
+body {
+    font-family: "Arial";
+    background: linear-gradient(green, white);
+    background-attachment: fixed;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#
