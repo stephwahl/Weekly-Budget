@@ -16,4 +16,6 @@ section {
     padding-left: 10px;
 }
 
-#category_label
+#category_label {
+    display: block; 
+}
