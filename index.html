@@ -13,12 +13,75 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <main>
 
-        <h1>This is our cool new site</h1>
+        <h1>My Weekly Budget</h1>
+        <div>
+            <p>Remaining Balance $</p>
+        </div>
+        <div class="main" id="add_expense_section">
+            <h2>Add Expense:</h2>
+            <form>
+                <label for="name_input">Select a category: </label>
+
+            <select name="category" id="name_input">
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food</option>
+                <option value="clothing">Clothing</option>
+                <option value="bills">Bills</option>
+            </select>
         
-        <script src="scripts.js" async defer></script>
+            <label input type="text">Expense amount
+              <input type="number" id="amount_input" placeholder="Expense amount" />
+            </label>
+
+            <div>
+                <button id="add_expense">Submit</button>
+            </div>
+
+            </form>
+
+            <table>
+                <tr>
+                    <th>Categories</th>
+                    <th>Budget</th>
+                    <th>Remaining</th>
+                </tr>
+                <tr>
+                    <td>Entertainment</td>
+                    <td><input type="number" id="ent_input" placeholder="Enter amount" /></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Food</td>
+                    <td><input type="number" id="food_input" placeholder="Enter amount" /></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Clothing</td>
+                    <td><input type="number" id="clothing_input" placeholder="Enter amount" /></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Bills</td>
+                    <td><input type="number" id="bills_input" placeholder="Enter amount" /></td>
+                    <td>$</td>
+                </tr>
+            </table>
+
+        </div>
+            
+        <div id="piechart">
+            <h2>Spend Analysis</h2>
+        </div>
+
+        <div>
+            <h2>Total Spent: $</h2>
+        </div>
+        
+        
+    </main>
+
+    <script src="scripts.js" async defer></script>
     </body>
 </html>
