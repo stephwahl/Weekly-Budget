@@ -10,6 +10,7 @@ body {
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+
 h1 {
     color: gray;
     text-align: center;
@@ -22,9 +23,32 @@ section {
     padding-left: 10px;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse; 
+    font-size: 12px;
+    text-align: center; 
+     
+  }
+
+  #table_section{
+      border: 10px solid pink;
+      padding: 5px;  
+  }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
 #remaining_balance {
     background-color: lightgreen;
     border: 1px solid lightgreen;
+    font-weight: bold; 
+}
+
+#add_expense_section h2{
+    font-size: 16px;  
 }
 
 #add_expense_section {
@@ -39,12 +63,20 @@ section {
 }
 
 #expense_amount_label {
-    display: block;
+    justify-content: flex-end; 
+    flex-direction: row; 
+    display: block; 
 }
 
 #submit_expense {
     width: 100%;
 }
+
+input { 
+    width: 50%;
+     
+}
+
 
 
 
