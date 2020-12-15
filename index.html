@@ -19,7 +19,8 @@
     
     <section id="table_section">
         <h2>Add Budget Amounts</h2>
-            <table>
+           <form>
+                <table>
                 <tr>
                     <th>Categories</th>
                     <th>Budget</th>
@@ -28,7 +29,7 @@
                 <tr>
                     <td>Entertainment</td>
                     <td><input type="number" id="ent_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
+                    <td id="ent_remaining"></td>
                 </tr>
                 <tr>
                     <td>Food</td>
@@ -46,6 +47,8 @@
                     <td>$</td>
                 </tr>
             </table>
+                <button id="submit_budget_amount">Submit</button>
+            </form>
         </section>
 
         <section id="add_expense_section">
@@ -88,11 +91,7 @@
         </div>
     </section>
 
-    <section id="remaining_balance">
-        <div>
-            <p>Remaining Balance $</p>
-        </div>
-    </section>
+   
         
     </main>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
