@@ -1,3 +1,5 @@
+
+/* This is Mobile View  */
 body {
     font-family: "Arial";
     background-color: #e6ffff;
@@ -5,7 +7,11 @@ body {
 }
 
 h1 {
+<<<<<<< HEAD
     color: #f6d55c;
+=======
+    color: #000;
+>>>>>>> d45df8d7b5d8e438163cc8d8a176b19f13adb446
     text-align: center;
 }
 
@@ -16,17 +22,20 @@ section {
     padding-left: 10px;
 }
 
-table, th, td {
-    border: 1px solid black;
+table{
+    border-collapse: collapse;
+    background-color: #f5f5f5; 
+    border-radius:10px; 
+    margin-left: 0px; 
+    width: 100%;  
+}
+
+th, td{
+    border-bottom: 1px solid #000000; 
     border-collapse: collapse; 
     font-size: 12px;
     text-align: center; 
-     
-  }
-
-  #table_section{
-      border: 10px solid pink;
-      padding: 5px;  
+    padding: 3px 10px; 
   }
 
 .container {
@@ -35,9 +44,11 @@ table, th, td {
 }
 
 #remaining_balance {
-    background-color: lightgreen;
-    border: 1px solid lightgreen;
-    font-weight: bold; 
+    background-color: #dcdcdc;
+    border: 1px solid grey;
+    font-weight: bold;
+    color: black;
+    opacity: 0.8;    
 }
 
 #add_expense_section h2 {
@@ -53,36 +64,87 @@ table, th, td {
 }
 
 #add_expense_section {
-    border: 1px solid lightblue;
+    border: 1px solid lightgray;
     border-radius: 10px;
-    background-color: lightblue;
+    background-color: lightgray;
     padding: 10px;
-    opacity: 0.7;
+    opacity: 0.8; 
 }
 
 #category_label {
-    display: block; 
+    display: block;
+    font-size: 14px;
 }
 
 #expense_amount_label {
-    justify-content: flex-end; 
+    justify-content: space-between; 
     flex-direction: row; 
-    display: block; 
+    display: block;
+    font-size: 14px; 
 }
 
 #submit_expense {
-    width: 100%;
+    width: 100px;
+    /* margin: 5px; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input { 
-    width: 50%;
-     
+    width: 50%;   
 }
 
+<<<<<<< HEAD
 #piechart {
 
 }
 
+=======
+/* This is Desktop View  */
 
+@media only screen and (min-width:768px) {
+
+* {box-sizing: border-box;}
+
+body{
+    display: flex; 
+}
+    .red {
+        color: red;
+    }
+
+h1{
+    align-content: flex-start;
+}
+>>>>>>> d45df8d7b5d8e438163cc8d8a176b19f13adb446
+
+#remaining_balance{
+    position: absolute; 
+    width: 45%;   
+}
+
+#add_expense_section{
+    position: relative;
+   top: 14%; 
+   width: 148%; 
+}
+
+#table_section{
+    position: relative; 
+    left: 800px;
+    width: auto;  
+}
+
+
+
+}
+
+ /* what you will use when switching from mobile to desktop */
+@media only screen and (min-width: 768px) {
+    #submit_expense {
+        width: auto;
+    }
+    
+}
 
 
