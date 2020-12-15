@@ -7,16 +7,12 @@ body {
 }
 
 h1 {
-<<<<<<< HEAD
-    color: #f6d55c;
-=======
     color: #000;
->>>>>>> d45df8d7b5d8e438163cc8d8a176b19f13adb446
     text-align: center;
 }
 
 section {
-    border: 1px solid black;
+    border: 1px solid black;git
     margin: 5px;
     border-radius: 10px;
     padding-left: 10px;
@@ -94,12 +90,10 @@ input {
     width: 50%;   
 }
 
-<<<<<<< HEAD
 #piechart {
 
 }
 
-=======
 /* This is Desktop View  */
 
 @media only screen and (min-width:768px) {
@@ -116,7 +110,6 @@ body{
 h1{
     align-content: flex-start;
 }
->>>>>>> d45df8d7b5d8e438163cc8d8a176b19f13adb446
 
 #remaining_balance{
     position: absolute; 
