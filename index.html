@@ -29,22 +29,22 @@
                 <tr>
                     <td>Entertainment</td>
                     <td><input type="number" id="ent_input" placeholder="Enter amount" /></td>
-                    <td id="ent_balance"></td>
+                    <td id="ent_remaining">$0</td>
                 </tr>
                 <tr>
                     <td>Food</td>
                     <td><input type="number" id="food_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
+                    <td id="food_remaining">$0</td>
                 </tr>
                 <tr>
                     <td>Clothing</td>
                     <td><input type="number" id="clothing_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
+                    <td id="clothing_remaining">$0</td>
                 </tr>
                 <tr>
                     <td>Bills</td>
                     <td><input type="number" id="bills_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
+                    <td id="bills_remaining">$0</td>
                 </tr>
             </table>
                 <button id="submit_budget_amount">Submit</button>
@@ -56,10 +56,10 @@
             <form>
         <div class="container">
             <div>   
-            <label for="name_input" id="category_label">Select a category</label>
+            <label for="name_input" id="category_label">Category</label>
 
             <select name="category" id="name_input">
-                <option>Select a category</option>
+                <option>Select a Category</option>
                 <option value="entertainment">Entertainment</option>
                 <option value="food">Food</option>
                 <option value="clothing">Clothing</option>
@@ -69,7 +69,7 @@
 
         <div>
             <label for="amount_input" id="expense_amount_label">Expense amount</label>
-            <input type="number" id="amount_input" placeholder="Expense amount">
+            <input type="number" id="amount_input" placeholder="Enter $ amount">
         </div>
     </div>
     
@@ -85,11 +85,16 @@
         <div id="piechart"></div>       
     </section>
 
-    <section>
+    <section id="total_spent_section">
         <div>
-            <h2>Total Spent: $ <span class="red" >sum</span></h2>
+            <h2>Total Spent:  <span class="red" id="total_expenses"></span></h2>
         </div>
     </section>
+
+    <div id="expense_list_section">
+        <h3>Expenses:</h3>
+        <div id="expense_list"></div>
+    </div>
 
    
         

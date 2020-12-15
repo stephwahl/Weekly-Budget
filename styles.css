@@ -12,13 +12,13 @@ h1 {
 }
 
 section {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     margin: 5px;
     border-radius: 10px;
     padding-left: 10px;
 }
 
-table{
+table {
     border-collapse: collapse;
     background-color: #f5f5f5; 
     border-radius:10px; 
@@ -26,7 +26,15 @@ table{
     width: 100%;  
 }
 
-th, td{
+#table_section {
+    background-color: #f5f5f5; 
+}
+
+h2 {
+    font-size: 16px;
+}
+
+th, td {
     border-bottom: 1px solid #000000; 
     border-collapse: collapse; 
     font-size: 12px;
@@ -34,65 +42,65 @@ th, td{
     padding: 3px 10px; 
   }
 
+  .red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+input { 
+    width: 75%;
+    text-align: center; 
+}
+
 .container {
     display: flex;
     justify-content: space-between;
 }
 
-#remaining_balance {
-    background-color: #dcdcdc;
-    border: 1px solid grey;
-    font-weight: bold;
-    color: black;
-    opacity: 0.8;    
-}
-
-#add_expense_section h2 {
-    font-size: 16px;
-}
-
-#table_section h2 {
-    font-size: 16px;
-}
-
-#spend_section h2 {
-    font-size: 16px;
+button {
+    width: 100px;
+    margin: 10px auto;
 }
 
 #add_expense_section {
     border: 1px solid lightgray;
     border-radius: 10px;
-    background-color: lightgray;
-    padding: 10px;
-    opacity: 0.8; 
+    background-color: lightgray; 
 }
 
 #category_label {
     display: block;
     font-size: 14px;
+    padding: 5px;
 }
 
 #expense_amount_label {
-    justify-content: space-between; 
-    flex-direction: row; 
     display: block;
     font-size: 14px; 
+    padding: 5px;
 }
 
-#submit_expense {
-    width: 100px;
-    /* margin: 5px; */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-input { 
-    width: 50%;   
+#spend_section {
+    background-color: white; 
 }
 
 #piechart {
-
+    padding-bottom: 15px;
 }
+
+#total_spent_section {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: lightgray; 
+}
+
+#total_spent_section h2 {
+    font-size: 24px;
+}
+
 
 /* This is Desktop View  */
 
