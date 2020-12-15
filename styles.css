@@ -59,24 +59,29 @@ th, td{
 }
 
 #add_expense_section {
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     border-radius: 10px;
-    background-color: #DCDCDC;
+    background-color: lightgray;
     padding: 10px;
     opacity: 0.8; 
 }
 #category_label {
-    display: block; 
+    display: block;
+    font-size: 14px;
 }
 
 #expense_amount_label {
-    justify-content: flex-end; 
+    justify-content: space-between; 
     flex-direction: row; 
-    display: block; 
+    display: block;
+    font-size: 14px; 
 }
 
 #submit_expense {
-    width: 100%;
+    width: 100px;
+    /* margin: 5px; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input { 
@@ -92,6 +97,9 @@ input {
 body{
     display: flex; 
 }
+    .red {
+        color: red;
+    }
 
 h1{
     align-content: flex-start;
@@ -118,5 +126,12 @@ h1{
 
 }
 
+ /* what you will use when switching from mobile to desktop */
+@media only screen and (min-width: 768px) {
+    #submit_expense {
+        width: auto;
+    }
+    
+}
 
 
