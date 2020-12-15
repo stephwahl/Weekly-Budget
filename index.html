@@ -4,96 +4,108 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-      <main>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-        <h1>My Weekly Budget</h1>
+  <body>
+    <main>
+      <h1>My Weekly Budget</h1>
 
-    <section id="remaining_balance">
+      <section id="remaining_balance">
         <div>
-            <p>Remaining Balance $</p>
+          <p>Remaining Balance $</p>
         </div>
-    </section>
+      </section>
 
-    <section id="add_expense_section">
-            <h2>Add Expense:</h2>
-            <form>
-        <div class="container">
-            <div>   
-            <label for="name_input" id="category_label">Select a category</label>
+      <section id="add_expense_section">
+        <h2>Add Expense:</h2>
+        <form>
+          <div class="container">
+            <div>
+              <label for="name_input" id="category_label">Select a category</label>
 
-            <select name="category" id="name_input">
+              <select name="category" id="name_input">
                 <option>Select a category</option>
                 <option value="entertainment">Entertainment</option>
                 <option value="food">Food</option>
                 <option value="clothing">Clothing</option>
                 <option value="bills">Bills</option>
-            </select>
-        </div>
-
-        <div>
-            <label for="amount_input" id="expense_amount_label">Expense amount</label>
-            <input type="number" id="amount_input" placeholder="Expense amount">
-        </div>
-    </div>
-    
-    <div>
-                <button id="submit_expense">Submit</button>
+              </select>
             </div>
 
-            </form>
-    </section>
-    <section id="table_section">
-            <table>
-                <tr>
-                    <th>Categories</th>
-                    <th>Budget</th>
-                    <th>Remaining</th>
-                </tr>
-                <tr>
-                    <td>Entertainment</td>
-                    <td><input type="number" id="ent_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
-                </tr>
-                <tr>
-                    <td>Food</td>
-                    <td><input type="number" id="food_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
-                </tr>
-                <tr>
-                    <td>Clothing</td>
-                    <td><input type="number" id="clothing_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
-                </tr>
-                <tr>
-                    <td>Bills</td>
-                    <td><input type="number" id="bills_input" placeholder="Enter amount" /></td>
-                    <td>$</td>
-                </tr>
-            </table>
-        </section>
-        
-     <section>  
+            <div>
+              <label for="amount_input" id="expense_amount_label">Expense amount</label><input type="number" id="amount_input" placeholder="Expense amount"/>
+            </div>
+          </div>
+
+        <div><button id="submit_expense">Submit</button></div>
+        </form>
+      </section>
+      
+      <section id="table_section">
+        <table>
+          <tr>
+            <th>Categories</th>
+            <th>Budget</th>
+            <th>Remaining</th>
+          </tr>
+          <tr>
+            <td>Entertainment</td>
+            <td>
+              <input type="number" id="ent_input" placeholder="Enter amount" />
+            </td>
+            <td>$</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>
+              <input type="number" id="food_input" placeholder="Enter amount" />
+            </td>
+            <td>$</td>
+          </tr>
+          <tr>
+            <td>Clothing</td>
+            <td>
+              <input
+                type="number"
+                id="clothing_input"
+                placeholder="Enter amount"
+              />
+            </td>
+            <td>$</td>
+          </tr>
+          <tr>
+            <td>Bills</td>
+            <td>
+              <input
+                type="number"
+                id="bills_input"
+                placeholder="Enter amount"
+              />
+            </td>
+            <td>$</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
         <div id="piechart">
-            <h2>Spend Analysis</h2>
+          <h2>Spend Analysis</h2>
         </div>
-    </section>
-    <section>
+      </section>
+      <section>
         <div>
-            <h2>Total Spent: $</h2>
+          <h2>Total Spent: $</h2>
         </div>
-    </section>
-        
+      </section>
     </main>
 
     <script src="scripts.js" async defer></script>
-    </body>
+  </body>
 </html>
