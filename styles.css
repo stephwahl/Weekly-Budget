@@ -1,18 +1,11 @@
 body {
     font-family: "Arial";
-    background-image: url("fabian-blank-pElSkGRA2NU-unsplash.jpg");
-    /* background: linear-gradient(green, white); */
-    /* background-attachment: fixed; */
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 500px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: #e6ffff;
+    background-attachment: fixed;
 }
 
-
 h1 {
-    color: gray;
+    color: #f6d55c;
     text-align: center;
 }
 
@@ -47,8 +40,16 @@ table, th, td {
     font-weight: bold; 
 }
 
-#add_expense_section h2{
-    font-size: 16px;  
+#add_expense_section h2 {
+    font-size: 16px;
+}
+
+#table_section h2 {
+    font-size: 16px;
+}
+
+#spend_section h2 {
+    font-size: 16px;
 }
 
 #add_expense_section {
@@ -58,6 +59,7 @@ table, th, td {
     padding: 10px;
     opacity: 0.7;
 }
+
 #category_label {
     display: block; 
 }
@@ -75,6 +77,10 @@ table, th, td {
 input { 
     width: 50%;
      
+}
+
+#piechart {
+
 }
 
 
