@@ -12,7 +12,7 @@ h1 {
 }
 
 section {
-    border: 1px solid black;git
+    border: 1px solid black;
     margin: 5px;
     border-radius: 10px;
     padding-left: 10px;
@@ -100,44 +100,38 @@ input {
 
 * {box-sizing: border-box;}
 
-body{
+body {
+    display: flex;
+    justify-content: center; 
+}
+
+section {
     display: flex; 
-}
-    .red {
-        color: red;
-    }
-
-h1{
-    align-content: flex-start;
-}
-
-#remaining_balance{
-    position: absolute; 
-    width: 45%;   
-}
-
-#add_expense_section{
-    position: relative;
-   top: 14%; 
-   width: 148%; 
-}
-
-#table_section{
-    position: relative; 
-    left: 800px;
-    width: auto;  
-}
-
-
-
-}
-
- /* what you will use when switching from mobile to desktop */
-@media only screen and (min-width: 768px) {
-    #submit_expense {
-        width: auto;
-    }
+    flex-direction: row;
+    align-content: space-around;
     
 }
+
+.red {
+    color: red;
+}
+
+h2 {
+    padding-right: 25px; 
+}
+
+select {
+    margin-right: 5px; 
+    padding: 2px;  
+}
+
+
+#submit_expense {
+    width: auto;
+    margin-top: 5px;  
+}
+
+}
+
 
 

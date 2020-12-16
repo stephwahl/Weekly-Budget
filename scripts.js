@@ -59,21 +59,36 @@ let balance = 0;
 //     }
 // }
 
+//when you select a category and enter the amount, you have to call the category using the id for the category  
+//this will all be input as a function of the submit button 
+//the new expense will be calculated by taking the current value and subtracting the newly input expense 
 function addExpense(event) {
     event.preventDefault();
-    let expense = {
-        expenseName: nameInput.value,
-        expenseAmount: amountInput.value
-    };
-    let newExpense = document.createElement("p");
-    newExpense.innerText = expense.expenseName + ": $" + expense.expenseAmount;
-    expenseList.appendChild(newExpense);
-    expenseAmount = parseInt(amountInput.value);
-    expenses.push(expenseAmount);
-    nameInput.value = "";
-    amountInput.value = "";
-    updateExpenseTotal();
+   
+    
+
 }
+
+// function updateRemaining(event) {
+//   event.preventDefault();
+//   entertainmentInput = entertainmentInput.value;
+//   let entRemainingBalance = document.getElementById("ent_remaining");
+//   let remaining = document.createElement("p");
+//   entRemainingBalance.appendChild("remaining"); 
+
+    // let expense = {
+    //     expenseName: nameInput.value,
+    //     expenseAmount: amountInput.value
+    // };
+    // let newExpense = document.createElement("p");
+    // newExpense.innerText = expense.expenseName + ": $" + expense.expenseAmount;
+    // expenseList.appendChild(newExpense);
+    // expenseAmount = parseInt(amountInput.value);
+    // expenses.push(expenseAmount);
+    // nameInput.value = "";
+    // amountInput.value = "";
+    // updateExpenseTotal();
+
 
 // function updateExpenseTotal() {
 //     expenseTotal = 0;
