@@ -1,15 +1,147 @@
+
+
+document.querySelector("#submit_budget_amount").addEventListener("click", updateRemaining);
+document.querySelector("#submit_expense").addEventListener("click",addExpense);
+
+let weeklyBudget = document.querySelector("#weekly_budget");
+let entertainmentInput = document.querySelector("#ent_input");
+let entRemainingBalance = document.querySelector("#ent_remaining");
+let foodInput = document.querySelector("#food_input");
+let foodRemainingBalance = document.querySelector("#food_remaining");
+let clothingInput = document.querySelector("#clothing_input");
+let clothingRemainingBalance = document.querySelector("#clothing_remaining");
+let billsInput = document.querySelector("#bills_input");
+let billsRemainingBalance = document.querySelector("#bills_remaining");
+let nameInput = document.querySelector("#name_input");
+let amountInput = document.querySelector("#amount_input");
+let totalExpenses = document.querySelector("#total_expenses");
+
+let remainingBalance = document.querySelector("#remaining_balance");
+let expenseList = document.querySelector("#expense_list");
+
+let entBudget = 0;
+let entExpenses = [];
+let entExpenseTotal = 0;
+let entBalance = 0;
+
+let foodBudget = 0;
+let foodExpenses = [];
+let foodExpenseTotal = 0;
+let foodBalance = 0;
+
+let clothingBudget = 0;
+let clothingExpenses = [];
+let clothingExpenseTotal = 0;
+let clothingBalance = 0;
+
+let billsBudget = 0;
+let billsExpenses = [];
+let billsExpenseTotal = 0;
+let billsBalance = 0;
+
+function updateRemaining(event) {
+  event.preventDefault();
+  entBudget = entertainmentInput.value;
+  entRemainingBalance.innerText = "$" + entertainmentInput;
+  entertainmentInput.value = "";
+
+  foodBudget = foodInput.value;
+  foodRemainingBalance.innerText = "$" + foodInput;
+  foodInput.value = "";
+
+  clothingBudget = clothingInput.value;
+  clothingRemainingBalance.innerText = "$" + clothingInput;
+  clothingInput.value = "";
+
+  billsBudget = billsInput.value;
+  billsRemainingBalance.innerText = "$" + billsInput;
+  billsInput.value = "";
+  updateBalance();
+}
+
+function updateBalance() {
+    entBalance = entBudget - entExpenseTotal;
+    entRemainingBalance.innerText = "$" + entBalance;
+    if (entBalance < 0) {
+        entRemainingBalance.classList.remove("green");
+        entRemainingBalance.classList.add("red");
+        alert('Your expenses have exceeded your budget');
+    }   else {
+        entRemainingBalance.classList.remove("red");
+        entRemainingBalance.classList.add("green");
+    }
+    // data.splice(1, 1, entBalance);
+
+    foodBalance = foodBudget - foodExpenseTotal;
+    foodRemainingBalance.innerText = "$" + foodBalance;
+    if (foodBalance < 0) {
+        foodRemainingBalance.classList.remove("green");
+        foodRemainingBalance.classList.add("red");
+    }   else {
+        foodRemainingBalance.classList.remove("red");
+        foodRemainingBalance.classList.add("green");
+    }
+    clothingBalance = clothingBudget - clothingExpenseTotal;
+    clothingRemainingBalance.innerText = "$" + clothingBalance;
+    if (clothingBalance < 0) {
+        clothingRemainingBalance.classList.remove("green");
+        clothingRemainingBalance.classList.add("red");
+    }   else {
+        clothingRemainingBalance.classList.remove("red");
+        clothingRemainingBalance.classList.add("green");
+    }
+    billsBalance = billsBudget - billsExpenseTotal;
+    billsRemainingBalance.innerText = "$" + billsBalance;
+    if (billsBalance < 0) {
+        billsRemainingBalance.classList.remove("green");
+        billsRemainingBalance.classList.add("red");
+    }   else {
+        billsRemainingBalance.classList.remove("red");
+        billsRemainingBalance.classList.add("green");
+    }
+}
+
+//when you select a category and enter the amount, you have to call the category using the id for the category  
+//this will all be input as a function of the submit button 
+//the new expense will be calculated by taking the current value and subtracting the newly input expense 
+function addExpense(event) {
+    event.preventDefault();
+    let entExpense = {
+        entExpenseName: nameInput.value,
+        entExpenseAmount: amountInput.value
+    };
+    let newExpense = document.createElement("p");
+    newExpense.innerText = entExpense.entExpenseName + ": $" + entExpense.entExpenseAmount;
+    expenseList.appendChild(newExpense);
+    entExpenseAmount = parseInt(amountInput.value);
+    entExpenses.push(entExpenseAmount);
+    nameInput.value = "";
+    amountInput.value = "";
+    updateExpenseTotal();
+}
+
+function updateExpenseTotal() {
+    entExpenseTotal = 0;
+    for (let i = 0; i < entExpenses.length; i++) {
+        entExpenseTotal += entExpenses[i];
+    }
+    totalExpenses.innerText = "$" + entExpenseTotal;
+    updateBalance();
+}
+
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
 function drawChart() {
+  entBalance = entBudget - entExpenseTotal;
   var data = google.visualization.arrayToDataTable([
   ['Category', 'Budget Amount Spent'],
-  ['Entertainment', 100],
-  ['Food', 200],
-  ['Clothing', 125],
-  ['Bills', 175]
+  ['Entertainment', entBalance],
+  ['Food', 150],
+  ['Clothing', 250],
+  ['Bills', 370]
 ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -18,84 +150,3 @@ function drawChart() {
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
-
-// document
-//     .querySelector("#update_income")
-//     .addEventListener("click", updateBudget);
-    
-
-document.querySelector("#submit_expense").addEventListener("click",addExpense);
-
-let weeklyBudget = document.querySelector("#weekly_budget");
-let incomeInput = document.querySelector("#income_input");
-let remainingBalance = document.querySelector("#remaining_balance");
-let amountInput = document.querySelector("#amount_input");
-let nameInput = document.querySelector("#name_input");
-let expenseList = document.querySelector("#expense_list");
-let totalExpenses = document.querySelector("#total_expenses");
-
-let weeklyIncome = 0;
-let expenses = [];
-let expenseTotal = 0;
-let balance = 0;
-
-// function updateBudget(event) {
-//     event.preventDefault();
-//     monthlyIncome = incomeInput.value;
-//     monthlyBudget.innerText = "$" + monthlyIncome;
-//     incomeInput.value = "";
-//     updateBalance();    
-// }
-
-// function updateBalance() {
-//     balance = monthlyIncome - expenseTotal;
-//     remainingBalance.innerText = "$" + balance;
-//     if (balance < 0) {
-//         remainingBalance.classList.remove("green");
-//         remainingBalance.classList.add("red");
-//     }   else {
-//         remainingBalance.classList.remove("red");
-//         remainingBalance.classList.add("green");
-//     }
-// }
-
-//when you select a category and enter the amount, you have to call the category using the id for the category  
-//this will all be input as a function of the submit button 
-//the new expense will be calculated by taking the current value and subtracting the newly input expense 
-function addExpense(event) {
-    event.preventDefault();
-   
-    
-
-}
-
-// function updateRemaining(event) {
-//   event.preventDefault();
-//   entertainmentInput = entertainmentInput.value;
-//   let entRemainingBalance = document.getElementById("ent_remaining");
-//   let remaining = document.createElement("p");
-//   entRemainingBalance.appendChild("remaining"); 
-
-    // let expense = {
-    //     expenseName: nameInput.value,
-    //     expenseAmount: amountInput.value
-    // };
-    // let newExpense = document.createElement("p");
-    // newExpense.innerText = expense.expenseName + ": $" + expense.expenseAmount;
-    // expenseList.appendChild(newExpense);
-    // expenseAmount = parseInt(amountInput.value);
-    // expenses.push(expenseAmount);
-    // nameInput.value = "";
-    // amountInput.value = "";
-    // updateExpenseTotal();
-
-
-// function updateExpenseTotal() {
-//     expenseTotal = 0;
-//     for (let i = 0; i < expenses.length; i++) {
-//         expenseTotal += expenses[i];
-//     }
-//     totalExpenses.innerText = "$" + expenseTotal;
-//     updateBalance();
-// }
-
