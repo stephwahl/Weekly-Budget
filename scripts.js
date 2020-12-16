@@ -100,6 +100,9 @@ function updateBalance() {
     }
 }
 
+//when you select a category and enter the amount, you have to call the category using the id for the category  
+//this will all be input as a function of the submit button 
+//the new expense will be calculated by taking the current value and subtracting the newly input expense 
 function addExpense(event) {
     event.preventDefault();
     let entExpense = {
