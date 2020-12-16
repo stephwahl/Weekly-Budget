@@ -92,8 +92,8 @@ button {
     font-size: 14px;
 }
 
-#expense_list_section div {
-    padding-bottom: 5px;
+#expense_list {
+    padding-bottom: 15px;
 }
 
 p {
@@ -102,10 +102,6 @@ p {
 
 #spend_section {
     background-color: white; 
-}
-
-#piechart {
-    padding-bottom: 15px;
 }
 
 #total_spent_section {
@@ -118,6 +114,13 @@ p {
     font-size: 24px;
 }
 
+/* Hide Expense List on Mobile view */
+
+@media (max-width: 767px) {
+    #expense_list_section {
+    display: none;
+    }
+    }
 
 /* This is Desktop View  */
 
@@ -149,6 +152,11 @@ select {
 #submit_expense {
     width: auto;
     margin-top: 5px;  
+}
+
+#piechart {
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 }

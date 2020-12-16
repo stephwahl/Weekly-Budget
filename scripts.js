@@ -164,26 +164,27 @@ function updateExpenseTotal() {
   let total = entExpenseTotal + foodExpenseTotal + clothingExpenseTotal + billsExpenseTotal;
     totalExpenses.innerText = "$" + total;
     updateBalance();
+    drawChart(entExpenseTotal, foodExpenseTotal, clothingExpenseTotal, billsExpenseTotal);
   }
 
-// // Load google charts
-// google.charts.load('current', {'packages':['corechart']});
-// google.charts.setOnLoadCallback(drawChart);
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-// // Draw the chart and set the chart values
-// function drawChart() {
-//   entBalance = entBudget - entExpenseTotal;
-//   var data = google.visualization.arrayToDataTable([
-//   ['Category', 'Budget Amount Spent'],
-//   ['Entertainment', entBalance],
-//   ['Food', 150],
-//   ['Clothing', 250],
-//   ['Bills', 370]
-// ]);
+// Draw the chart and set the chart values
+function drawChart() {
+  entBalance = entBudget - entExpenseTotal;
+  var data = google.visualization.arrayToDataTable([
+  ['Category', 'Budget Amount Spent'],
+  ['Entertainment', entExpenseTotal],
+  ['Food', foodExpenseTotal],
+  ['Clothing', clothingExpenseTotal],
+  ['Bills', billsExpenseTotal]
+]);
 
-//   // Optional; add a title and set the width and height of the chart
-//   var options = {title: 'Amount Spent by Category', legend: 'right', pieSliceText: 'value','width':325, 'height':150, pieHole: 0.2};
+  // Optional; add a title and set the width and height of the chart
+  var options = {title: 'Amount Spent by Category', legend: 'right', pieSliceText: 'value','width':325, 'height':150, pieHole: 0.2};
   
-//   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-//   chart.draw(data, options);
-// }
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
