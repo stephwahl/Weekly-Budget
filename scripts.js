@@ -65,7 +65,7 @@ function updateBalance() {
     if (entBalance < 0) {
         entRemainingBalance.classList.remove("green");
         entRemainingBalance.classList.add("red");
-        alert('Your expenses have exceeded your budget');
+        alert('Your Entertainment expenses have exceeded your budget');
     }   else {
         entRemainingBalance.classList.remove("red");
         entRemainingBalance.classList.add("green");
@@ -76,6 +76,7 @@ function updateBalance() {
     if (foodBalance < 0) {
         foodRemainingBalance.classList.remove("green");
         foodRemainingBalance.classList.add("red");
+        alert('Your Food expenses have exceeded your budget');
     }   else {
         foodRemainingBalance.classList.remove("red");
         foodRemainingBalance.classList.add("green");
@@ -85,6 +86,7 @@ function updateBalance() {
     if (clothingBalance < 0) {
         clothingRemainingBalance.classList.remove("green");
         clothingRemainingBalance.classList.add("red");
+        alert('Your Clothing expenses have exceeded your budget');
     }   else {
         clothingRemainingBalance.classList.remove("red");
         clothingRemainingBalance.classList.add("green");
@@ -94,6 +96,7 @@ function updateBalance() {
     if (billsBalance < 0) {
         billsRemainingBalance.classList.remove("green");
         billsRemainingBalance.classList.add("red");
+        alert('Your Bills expenses have exceeded your budget');
     }   else {
         billsRemainingBalance.classList.remove("red");
         billsRemainingBalance.classList.add("green");
@@ -105,18 +108,35 @@ function updateBalance() {
 //the new expense will be calculated by taking the current value and subtracting the newly input expense 
 function addExpense(event) {
     event.preventDefault();
-    let entExpense = {
-        entExpenseName: nameInput.value,
-        entExpenseAmount: amountInput.value
+    let expense = {
+        expenseName: nameInput.value,
+        expenseAmount: amountInput.value
     };
     let newExpense = document.createElement("p");
-    newExpense.innerText = entExpense.entExpenseName + ": $" + entExpense.entExpenseAmount;
+    newExpense.innerText = expense.expenseName + ": $" + expense.expenseAmount;
     expenseList.appendChild(newExpense);
-    entExpenseAmount = parseInt(amountInput.value);
-    entExpenses.push(entExpenseAmount);
-    nameInput.value = "";
-    amountInput.value = "";
-    updateExpenseTotal();
+    expenseAmount = parseInt(amountInput.value);
+    if (expense.expenseName == "Entertainment") {
+      entExpenses.push(expenseAmount);
+      nameInput.value = "";
+      amountInput.value = "";
+      updateExpenseTotal();
+    } else if (expense.expenseName == "Food") {
+      foodExpenses.push(expenseAmount);
+      nameInput.value = "";
+      amountInput.value = "";
+      updateExpenseTotal();
+    } else if (expense.expenseName == "Clothing") {
+      clothingExpenses.push(expenseAmount);
+      nameInput.value = "";
+      amountInput.value = "";
+      updateExpenseTotal();
+    } if (expense.expenseName == "Bills") {
+      billsExpenses.push(expenseAmount);
+      nameInput.value = "";
+      amountInput.value = "";
+      updateExpenseTotal();
+    }
 }
 
 function updateExpenseTotal() {
@@ -124,41 +144,46 @@ function updateExpenseTotal() {
     foodExpenseTotal = 0;
     clothingExpenseTotal = 0;
     billsExpenseTotal = 0;
-
+    
     for (let i = 0; i < entExpenses.length; i++) {
-        entExpenseTotal += entExpenses[i];
+      entExpenseTotal += entExpenses[i];
     }
-    // for (let i = 0; i < foodExpenses.length; i++) {
-    //   foodExpenseTotal += foodExpenses[i];
-    // }
-    // for (let i = 0; i < clothingExpenses.length; i++) {
-    //   clothingExpenseTotal += clothingExpenses[i];
-    // }
-    // for (let i = 0; i < billsExpenses.length; i++) {
-    //   billsExpenseTotal += billsExpenses[i];
-    // }
-    totalExpenses.innerText = "$" + entExpenseTotal;
+
+    for (let i = 0; i < foodExpenses.length; i++) {
+      foodExpenseTotal += foodExpenses[i];
+    }
+
+    for (let i = 0; i < clothingExpenses.length; i++) {
+      clothingExpenseTotal += clothingExpenses[i];
+    }
+
+    for (let i = 0; i < billsExpenses.length; i++) {
+      billsExpenseTotal += billsExpenses[i];
+    }
+ 
+  let total = entExpenseTotal + foodExpenseTotal + clothingExpenseTotal + billsExpenseTotal;
+    totalExpenses.innerText = "$" + total;
     updateBalance();
   }
 
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+// // Load google charts
+// google.charts.load('current', {'packages':['corechart']});
+// google.charts.setOnLoadCallback(drawChart);
 
-// Draw the chart and set the chart values
-function drawChart() {
-  entBalance = entBudget - entExpenseTotal;
-  var data = google.visualization.arrayToDataTable([
-  ['Category', 'Budget Amount Spent'],
-  ['Entertainment', entBalance],
-  ['Food', 150],
-  ['Clothing', 250],
-  ['Bills', 370]
-]);
+// // Draw the chart and set the chart values
+// function drawChart() {
+//   entBalance = entBudget - entExpenseTotal;
+//   var data = google.visualization.arrayToDataTable([
+//   ['Category', 'Budget Amount Spent'],
+//   ['Entertainment', entBalance],
+//   ['Food', 150],
+//   ['Clothing', 250],
+//   ['Bills', 370]
+// ]);
 
-  // Optional; add a title and set the width and height of the chart
-  var options = {title: 'Amount Spent by Category', legend: 'right', pieSliceText: 'value','width':325, 'height':150, pieHole: 0.2};
+//   // Optional; add a title and set the width and height of the chart
+//   var options = {title: 'Amount Spent by Category', legend: 'right', pieSliceText: 'value','width':325, 'height':150, pieHole: 0.2};
   
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
+//   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+//   chart.draw(data, options);
+// }

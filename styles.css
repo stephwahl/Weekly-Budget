@@ -87,6 +87,19 @@ button {
     padding: 5px;
 }
 
+#expense_list_section {
+    background-color: white;
+    font-size: 14px;
+}
+
+#expense_list_section div {
+    padding-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
 #spend_section {
     background-color: white; 
 }
@@ -121,11 +134,6 @@ section {
     display: flex; 
     flex-direction: row;
     align-content: space-around;
-    
-}
-
-.red {
-    color: red;
 }
 
 h2 {
