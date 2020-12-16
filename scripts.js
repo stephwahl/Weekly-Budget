@@ -70,8 +70,7 @@ function updateBalance() {
         entRemainingBalance.classList.remove("red");
         entRemainingBalance.classList.add("green");
     }
-    // data.splice(1, 1, entBalance);
-
+    
     foodBalance = foodBudget - foodExpenseTotal;
     foodRemainingBalance.innerText = "$" + foodBalance;
     if (foodBalance < 0) {
@@ -119,12 +118,25 @@ function addExpense(event) {
 
 function updateExpenseTotal() {
     entExpenseTotal = 0;
+    foodExpenseTotal = 0;
+    clothingExpenseTotal = 0;
+    billsExpenseTotal = 0;
+
     for (let i = 0; i < entExpenses.length; i++) {
         entExpenseTotal += entExpenses[i];
     }
+    // for (let i = 0; i < foodExpenses.length; i++) {
+    //   foodExpenseTotal += foodExpenses[i];
+    // }
+    // for (let i = 0; i < clothingExpenses.length; i++) {
+    //   clothingExpenseTotal += clothingExpenses[i];
+    // }
+    // for (let i = 0; i < billsExpenses.length; i++) {
+    //   billsExpenseTotal += billsExpenses[i];
+    // }
     totalExpenses.innerText = "$" + entExpenseTotal;
     updateBalance();
-}
+  }
 
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});

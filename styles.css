@@ -42,12 +42,16 @@ th, td {
     padding: 3px 10px; 
   }
 
-  .red {
+.red {
     color: red;
 }
 
 .green {
     color: green;
+}
+
+.yellow {
+    color: #f58153;
 }
 
 input { 
