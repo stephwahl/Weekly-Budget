@@ -43,19 +43,19 @@ function updateRemaining(event) {
   event.preventDefault();
   entBudget = entertainmentInput.value;
   entRemainingBalance.innerText = "$" + entertainmentInput;
-  entertainmentInput.value = "";
+ // entertainmentInput.value = "";
 
   foodBudget = foodInput.value;
   foodRemainingBalance.innerText = "$" + foodInput;
-  foodInput.value = "";
+  //foodInput.value = "";
 
   clothingBudget = clothingInput.value;
   clothingRemainingBalance.innerText = "$" + clothingInput;
-  clothingInput.value = "";
+  //clothingInput.value = "";
 
   billsBudget = billsInput.value;
   billsRemainingBalance.innerText = "$" + billsInput;
-  billsInput.value = "";
+  //billsInput.value = "";
   updateBalance();
 }
 
